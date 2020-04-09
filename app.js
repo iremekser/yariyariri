@@ -21,7 +21,11 @@ mongoose.connect(process.env.DB_CONNECTION,
         console.log("Connect to DB");
     });
 
-app.listen(2000);
+app.listen(2001);
 
+const port = process.env.PORT || 2000
 
+app.listen(port, () => {
+    console.log(`Server running at port ` + port);
+});
 
