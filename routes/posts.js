@@ -17,7 +17,8 @@ router.post('/', async (req, res) => {
         artist: req.body.artist,
         songName: req.body.songName,
         lyric: req.body.lyric,
-        user: req.body.user
+        user: req.body.user,
+        spotifyLink: req.body.spotifyLink
     });
     try {
         const savedPost = await post.save();

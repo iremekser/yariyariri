@@ -17,6 +17,10 @@ const PostSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    spotifyLink: {
+        type: String,
+        required: false
+    },
     date: {
         type: Date,
         default: Date.now
