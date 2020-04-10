@@ -15,7 +15,7 @@ const PostSchema = mongoose.Schema({
     },
     user: {
         type: String,
-        required: true
+        required: false
     },
     spotifyLink: {
         type: String,
