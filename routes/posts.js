@@ -63,5 +63,28 @@ router.patch('/:postId', async (req, res) => {
     }
 });
 
+router.put('/:postId', async (req, res) => {
+    try {
+        console.log(req.body);
+
+        const putPost = await Post.findOneAndUpdate(
+            { _id: req.params.postId },
+            {
+                $set: {
+                    artist: req.body.artist,
+                    songName: req.body.songName,
+                    lyric: req.body.lyric,
+                    user: req.body.user,
+                    spotifyLink: req.body.spotifyLink
+                }
+            }
+        );
+        res.json(putPost);
+    }
+    catch (err) {
+        res.json({ message: err });
+    }
+});
+
 module.exports = router;
 
